@@ -50,7 +50,7 @@ Where possible, use `let foo: FooType?` instead of `let foo: FooType!` if `foo` 
 
 _Rationale:_ Explicit optionals result in safer code. Implicitly unwrapped optionals have the potential of crashing at runtime.
 
-#### Unwraping optionals
+#### Unwrapping optionals
 
 When unwrapping an optional with `if let` syntax, prefer reusing the name of the optional variable.
 
@@ -61,9 +61,9 @@ if let foo = foo {
 	foo.bar()
 }
 ```
-Not preferred: 
+Not preferred:
 
-``` 
+```
 if let newFoo = foo {
 	newFoo.bar()
 }
@@ -239,7 +239,7 @@ Classes should start as `final`, and only be changed to allow subclassing if a v
 
 _Rationale:_ Composition is usually preferable to inheritance, and opting _in_ to inheritance hopefully means that more thought will be put into the decision.
 
-#### Omit type annotations when possible 
+#### Omit type annotations when possible
 
 Preferred
 
@@ -300,7 +300,7 @@ _Rationale:_ Operators consist of punctuation characters, which can make them di
 
 #### Use inline arrray and dictionary declarations
 
-Preferred 
+Preferred
 
 ```swift
 let array = [AnyObject]()
@@ -343,7 +343,7 @@ Not Preferred
 foo.bar();
 ```
 
-#### A&A indentation style should be preferred 
+#### A&A indentation style should be preferred
 
 Preffered
 
@@ -351,7 +351,7 @@ Preffered
 class Foo {
 
 	var x = 0
-	
+
 	func bar() {
 		if 1 == 1 {
 			//code
@@ -359,7 +359,7 @@ class Foo {
 			//other code
 		}
 	}
-	
+
 }
 ```
 
