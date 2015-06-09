@@ -345,7 +345,7 @@ foo.bar();
 
 #### A&A indentation style should be preferred
 
-Preffered
+Preferred
 
 ```swift
 class Foo {
@@ -382,5 +382,5 @@ APIManager.sharedInstance.procureVendorInfo { [weak self] (error) -> () in
     // code using awards...
   }
 }
-
+```
 _Rationale:_ the early exit idea of Apple at play. It prevents the need for massive indents of an if-let and lets us use awards without having to have the ugly ? syntax
