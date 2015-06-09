@@ -363,4 +363,24 @@ class Foo {
 }
 ```
 
-#### Don't put functions in enums.  Its cool, but seriously don't do it.
+#### Don't put functions in enums.  It's cool, but seriously don't do it.
+
+
+
+
+#### Use guard lets to check weak pointers in asynchronous closures
+
+If you have a situation where you're using a capture list to catch self in a closure, in Swift 2, do it this way:
+
+```swift
+APIManager.sharedInstance.procureVendorInfo { [weak self] (error) -> () in
+  dispatch_async(dispatch_get_main_queue(), { () -> Void in
+    guard let awards = self else {
+      return
+    }
+
+    // code using awards...
+  }
+}
+
+_Rationale:_ the early exit idea of Apple at play. It prevents the need for massive indents of an if-let and lets us use awards without having to have the ugly ? syntax
